@@ -12,6 +12,7 @@ const UserCard = () => {
         <Loader />
       </div>
     );
+
   if (error)
     return (
       <div className="text-red-500">
@@ -28,7 +29,7 @@ const UserCard = () => {
       </h3>
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl overflow-hidden">
         {/* Image Section */}
-        <div className="flex justify-center bg-indigo-100 py-6">
+        <div className="flex justify-center bg-indigo-100 py-6 cursor-pointer">
           <img
             src={user.picture.large}
             alt={user.name.first}
@@ -38,23 +39,16 @@ const UserCard = () => {
 
         {/* Card Content Section */}
         <div className="p-6 space-y-4">
-          {/* Name Section */}
           <h2 className="text-center text-3xl font-semibold text-gray-900">
             {user.name.title} {user.name.first} {user.name.last}
           </h2>
-
-          {/* Gender Section */}
           <p className="text-center text-xl text-gray-700">
             <span className="font-semibold">Gender:</span> {user.gender}
           </p>
-
-          {/* Date of Birth Section */}
           <p className="text-center text-xl text-gray-700">
             <span className="font-semibold">DOB:</span>{" "}
             {new Date(user.dob.date).toLocaleDateString()} (Age: {user.dob.age})
           </p>
-
-          {/* Contact Information */}
           <div className="space-y-2">
             <p className="text-center text-lg text-gray-700">
               <span className="font-semibold">Email:</span> {user.email}
@@ -70,21 +64,15 @@ const UserCard = () => {
               {user.location.city}, {user.location.state}
             </p>
           </div>
-
-          {/* ID Section (if available) */}
           {user.id?.value && (
             <p className="text-center text-lg text-gray-700">
               <span className="font-semibold">ID ({user.id.name}):</span>{" "}
               {user.id.value}
             </p>
           )}
-
-          {/* Registration Section */}
           <p className="text-center text-lg text-gray-700">
             <span className="font-semibold">Registered:</span>{" "}
             {new Date(user.registered.date).toLocaleDateString()}
-            {/* (Age:{" "}
-            {user.registered.age}) */}
           </p>
         </div>
       </div>

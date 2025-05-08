@@ -20,10 +20,12 @@ const GitHubUserCard = () => {
   if (error || userError) return <ErrorComponent />;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <h3 className="text-2xl font-bold mb-4">GitHub user profile</h3>
+    <div className="flex flex-col items-center justify-center -mt-[145px]">
+      <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+        GitHub user profile
+      </h3>
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl overflow-hidden">
-        <div className="flex justify-center bg-indigo-100 py-6">
+        <div className="flex justify-center bg-indigo-100 py-6 cursor-pointer">
           <img
             src={user.avatar_url}
             alt={user.login}
