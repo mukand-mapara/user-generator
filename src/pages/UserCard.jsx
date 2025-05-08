@@ -23,11 +23,11 @@ const UserCard = () => {
   const user = data.results[0];
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+    <div className="absolute top-10">
+      <h3 className="text-2xl font-bold mb-4 text-center text-gray-900 dark:text-white">
         Random user profile
       </h3>
-      <div className="w-full max-w-md bg-white shadow-lg rounded-xl overflow-hidden">
+      <div className="w-full max-w-sm bg-white shadow-lg rounded-xl overflow-hidden">
         {/* Image Section */}
         <div className="flex justify-center bg-indigo-100 py-6 cursor-pointer">
           <img
